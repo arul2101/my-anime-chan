@@ -1,15 +1,16 @@
-export default function Navbar() {
-  return (
-    <nav className="bg-primary">
-      <h2>MyAnimeList</h2>
+import Link from "next/link";
+import InputSearch from "./InputSearch";
 
-      <form action="">
-        <input
-          type="text"
-          name="search"
-          id="search"
-        />
-      </form>
+const Navbar: React.FC = () => {
+  return (
+    <nav className="bg-primary flex justify-between items-center p-4">
+      <h2 className="font-semibold text-[2rem] text-secondary">
+        <Link href="/">MyAnimeList</Link>
+      </h2>
+
+      <InputSearch />
     </nav>
   )
 }
+
+export default Navbar;
