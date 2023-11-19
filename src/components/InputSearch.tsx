@@ -17,6 +17,8 @@ const InputSearch: React.FC = () => {
         type="text"
         name="search"
         id="search"
+        className="py-2 px-4 rounded-lg lg:w-[15rem] md:w-[15rem] w-[80vw]"
+        value={query}
         onChange={e => setQuery(e.target.value)}
       />
     </form>
