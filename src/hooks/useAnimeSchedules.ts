@@ -4,21 +4,19 @@ import type { AnimesSchedule } from "@/types/types";
 
 export function useAnimeSchedules(selectedDay: string) {
   const [isFetching, setIsFetching] = useState<boolean>(false);
-  const [animesSchedule, setAnimeSchedule] = useState<AnimesSchedule[]>([]);
+  const [animesSchedule, setAnimesSchedule] = useState<AnimesSchedule[]>([]);
 
   useEffect(() => {
-    const fetchAnimes = async () => {
+    (async function () {
       setIsFetching(true);
       try {
         const animes = await getAnimesSchedules(`filter=${selectedDay}`);
-        setAnimeSchedule(animes.data);
+        setAnimesSchedule(animes.data);
       } catch (error: Error | any) {
         throw new Error(error.message);
       }
       setIsFetching(false);
-    }
-
-    fetchAnimes();
+    })();
   }, [selectedDay])
 
   return { animesSchedule, isFetching };

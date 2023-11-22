@@ -1,17 +1,31 @@
-import ImageTest from '@/img/test.png'
-import Image from 'next/image'
+'use client'
+
 import TitleSection from './TitleSection'
+import { useAnimeTopFavorite } from '@/hooks/useAnimeTopFavorite'
+import TopAnimeCard from './TopAnimeCard'
+import LoadingSpinner from './LoadingSpinner'
+import { motion as m } from 'framer-motion';
 
 const TopAnime: React.FC = () => {
-  return (
-    <div className="w-[25%] bg-section text-white py-4 px-6 rounded-md mb-5">
-      <TitleSection title='Top Anime' />
-      <div className='w-full my-4 flex px-2 py-3 rounded-md hover:bg-dark gap-4 hover:cursor-pointer'>
-        <Image src={ImageTest} alt='test-image' className='w-[15%] h-[70px] object-cover' />
+  const { animesTopSeason, isFetching } = useAnimeTopFavorite();
 
-        <h2 className='font-light text-[1.2rem]'>Spy x Family season 1</h2>
+
+  return (
+    <m.div
+      className="lg:w-[28%] w-[100%] bg-section text-white py-4 px-6 rounded-md"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1, ease: "linear" }}
+    >
+      <TitleSection title='Top Season' />
+      <div className='w-full my-4 flex flex-col px-2 py-3 rounded-m gap-4'>
+        {!isFetching
+          ? animesTopSeason.map(anime => <TopAnimeCard key={anime.mal_id} anime={anime} />)
+          : <LoadingSpinner />
+        }
       </div>
-    </div>
+    </m.div>
   )
 }
 

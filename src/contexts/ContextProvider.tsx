@@ -1,5 +1,7 @@
 'use client'
 
+import { useAnimeSchedules } from "@/hooks/useAnimeSchedules";
+import { AnimesSchedule } from "@/types/types";
 import { createContext, useState, useContext } from "react";
 
 export const days = [
@@ -24,11 +26,10 @@ const StateContext = createContext<test | any>({});
 
 export const ContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [selectedDay, setSelectedDay] = useState<string>(dayNow);
-
   return (
     <StateContext.Provider value={{
       selectedDay,
-      setSelectedDay
+      setSelectedDay,
     }}>
       {children}
     </StateContext.Provider>
