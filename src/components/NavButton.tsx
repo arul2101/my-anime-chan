@@ -11,7 +11,7 @@ const NavButton: React.FC<NavButtonProps> = ({ children, day }) => {
   const { selectedDay, setSelectedDay } = useStateContext();
   return (
     <button
-      className={`px-8 py-3 hover:bg-primary rounded-lg ${selectedDay === day && 'bg-primary'}`}
+      className={`md:py-3 md:w-[14%] py-1 w-[3rem] hover:bg-primary rounded-lg ${selectedDay === day && 'bg-primary'}`}
       onClick={() => setSelectedDay(day)}
     >{children}</button>
   )

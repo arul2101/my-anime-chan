@@ -11,14 +11,12 @@ const Schedules: React.FC = () => {
   const { animesSchedule, isFetching } = useAnimeSchedules(selectedDay);
 
   return (
-    <div className="w-[65%] bg-section text-white py-4 px-6 rounded-md">
+    <div className="lg:w-[73%] w-[100%] mb-4 bg-section text-white py-4 px-6 rounded-md">
       <TitleSection title="Schedule" />
       <NavigationSchedules />
-      <div>
-        {!isFetching
-          ? animesSchedule.map((anime) => <AnimeCard key={anime.mal_id} anime={anime} />)
-          : <div className="w-10 h-10 border-4 border-dashed rounded-full animate-spin mx-auto border-primary mt-10"></div>}
-      </div>
+      {!isFetching
+        ? animesSchedule.map((anime) => <AnimeCard key={anime.mal_id} anime={anime} />)
+        : <div className="w-10 h-10 border-4 border-dashed rounded-full animate-spin mx-auto border-primary mt-10"></div>}
     </div>
   )
 }
