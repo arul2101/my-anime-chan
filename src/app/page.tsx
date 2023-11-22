@@ -1,6 +1,12 @@
+import Schedules from "@/components/Schedules";
+import TopAnime from "@/components/TopAnime";
+
 const Home: React.FC = () => {
   return (
-    <h1>HELLO TESTING</h1>
+    <div className="flex justify-between">
+      <Schedules />
+      <TopAnime />
+    </div>
   )
 }
 
