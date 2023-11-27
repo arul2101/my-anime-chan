@@ -1,8 +1,9 @@
 'use client'
 
+import { Genres } from "@/types/types";
 import { useRouter } from "next/navigation"
 
-const GenreItem = ({ genre }) => {
+const GenreItem: React.FC<{ genre: Genres }> = ({ genre }) => {
   const router = useRouter();
 
   return (

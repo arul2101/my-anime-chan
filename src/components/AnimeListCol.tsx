@@ -3,8 +3,9 @@ import TitleSection from "./TitleSection"
 import { useRouter } from "next/navigation"
 import LoadingSpinner from "./LoadingSpinner";
 import AnimeCardColumn from "./AnimeCardColumn";
+import { AnimeDetail, AnimeListRow, AnimeSearch, AnimesTopSeason } from "@/types/types";
 
-const AnimeListCol = ({ animes, isFetching, title }) => {
+const AnimeListCol: React.FC<{ animes: any; isFetching: boolean; title: string; }> = ({ animes, isFetching, title }) => {
   const router = useRouter();
   return (
     <div
@@ -13,7 +14,7 @@ const AnimeListCol = ({ animes, isFetching, title }) => {
       <TitleSection title={title} />
       <div className='w-full my-4 flex flex-col px-2 py-3 rounded-m gap-4'>
         {!isFetching
-          ? animes.map((anime, index) => <AnimeCardColumn key={index} anime={anime} />)
+          ? animes.map((anime: AnimeDetail, index: number) => <AnimeCardColumn key={index} anime={anime} />)
           : <LoadingSpinner />
         }
       </div>
