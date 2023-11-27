@@ -1,11 +1,11 @@
 import { getTopSeasonAnimes } from "@/lib/apiCall";
 import { useEffect, useState } from "react";
-import type { AnimesTopSeason } from "@/types/types";
+import type { AnimeListRow } from "@/types/types";
 
 
 export function useAnimeTopFavorite() {
   const [isFetching, setIsFetching] = useState<boolean>(false);
-  const [animesTopSeason, setAnimesTopSeason] = useState<AnimesTopSeason[]>([]);
+  const [animesTopSeason, setAnimesTopSeason] = useState<AnimeListRow[]>([]);
 
   useEffect(() => {
     (async function () {

@@ -195,7 +195,21 @@ export type AnimeDetail = {
 }
 
 export type AnimeListRow = {
-  aired: object;
+  aired: {
+    from: string;
+    prop: {
+      from: {
+        day: number;
+        month: number;
+        year: number;
+      };
+      to: {
+        day?: number;
+        month?: number;
+        year?: number;
+      };
+    };
+  };
   airing: boolean;
   approved: boolean;
   background?: any;
@@ -227,11 +241,16 @@ export type AnimeListRow = {
   mal_id: number;
   members: number;
   popularity: number;
-  producers: any[];
+  producers: {
+    mal_id: number;
+    name: string;
+    type: string;
+    url: string;
+  }[];
   rank: number;
   rating: string;
-  score?: any;
-  scored_by?: any;
+  score?: number;
+  scored_by?: number;
   season: string;
   source: string;
   status: string;
@@ -242,13 +261,29 @@ export type AnimeListRow = {
     url: string;
   }[];
   synopsis?: string;
-  themes: any[];
+  themes: {
+    mal_id: number;
+    name: string;
+    type: string;
+    url: string;
+  }[];
   title: string;
-  title_english?: any;
+  title_english?: string;
   title_japanese: string;
-  title_synonyms: any[];
+  title_synonyms: string[];
   titles: any[];
-  trailer: object;
+  trailer: {
+    embed_url: string;
+    images: {
+      image_url: string;
+      large_image_url: string;
+      maximum_image_url: string;
+      medium_image_url: string;
+      small_image_url: string;
+    };
+    url: string;
+    youtube_id: string;
+  };
   type: string;
   url: string;
   year: number;

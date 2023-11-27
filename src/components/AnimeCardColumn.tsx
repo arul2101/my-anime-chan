@@ -1,8 +1,8 @@
-import { AnimeDetail } from "@/types/types"
+import { AnimeDetail, AnimeListRow } from "@/types/types"
 import Image from "next/image"
 import Link from "next/link"
 
-const AnimeCardColumn: React.FC<{ anime: AnimeDetail }> = ({ anime }) => {
+const AnimeCardColumn: React.FC<{ anime: AnimeListRow }> = ({ anime }) => {
   return (
     <Link
       href={`/anime/${anime.mal_id}`}
