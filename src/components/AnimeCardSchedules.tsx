@@ -1,10 +1,19 @@
+'use client';
+
 import type { AnimesSchedule } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-const AnimeCard: React.FC<{ anime: AnimesSchedule }> = ({ anime }) => {
+const AnimeCardSchedules: React.FC<{ anime: AnimesSchedule }> = ({ anime }) => {
+  // const router = useRouter();
+
+
   return (
-    <Link href={`/anime/${anime.mal_id}`} className="w-full flex gap-4 mb-5 py-2 px-4 rounded-md hover:bg-dark hover:cursor-pointer">
+    <Link
+      href={`/anime/${anime.mal_id}`}
+      className="w-full flex gap-4 mb-5 py-2 px-4 rounded-md hover:bg-dark hover:cursor-pointer"
+    >
       <div className="md:w-[35%] w-[50%]">
         <Image
           src={anime.images.webp.image_url}
@@ -33,10 +42,10 @@ const AnimeCard: React.FC<{ anime: AnimesSchedule }> = ({ anime }) => {
           }
         </div>
         <p className="font-light md:text-[1rem] text-[.9rem]">Score : {anime.score !== null ? anime.score : "Not Available"}</p>
-        <p className="mt-5 font-extralight md:text-[1rem] text-[.9rem]">{anime.synopsis?.split(" ").slice(0, 30).join(" ")}</p>
+        <p className="mt-5 font-extralight md:text-[1rem] text-[.9rem]">{anime.synopsis?.split(" ").slice(0, 30).join(" ")}...</p>
       </div>
     </Link>
   )
 }
 
-export default AnimeCard;
+export default AnimeCardSchedules;

@@ -1,10 +1,12 @@
-import type { AnimesTopSeason } from "@/types/types"
 import Image from "next/image"
 import Link from "next/link"
 
-const TopAnimeCard: React.FC<{ anime: AnimesTopSeason }> = ({ anime }) => {
+const AnimeCardColumn = ({ anime }) => {
   return (
-    <Link href={`/anime/${anime.mal_id}`} className="hover:cursor-pointer hover:bg-dark flex gap-2 mb-3 px-2 py-2 rounded-md w-full">
+    <Link
+      href={`/anime/${anime.mal_id}`}
+      className="hover:cursor-pointer hover:bg-dark flex gap-2 mb-3 px-2 py-2 rounded-md w-full"
+    >
       <div className='w-[28%]'>
         <Image
           src={anime.images.webp.image_url}
@@ -19,8 +21,7 @@ const TopAnimeCard: React.FC<{ anime: AnimesTopSeason }> = ({ anime }) => {
         <h2 className='font-light md:text-[1rem]'>{anime.title}</h2>
       </div>
     </Link>
-
   )
 }
 
-export default TopAnimeCard
+export default AnimeCardColumn

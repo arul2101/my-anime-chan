@@ -1,17 +1,21 @@
 'use client'
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const InputSearch: React.FC = () => {
   const [query, setQuery] = useState<string>("");
+  const router = useRouter();
 
   const handleQuery = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    console.log(query);
+    router.push(`/search?title=${query}`);
+    setQuery("");
   }
 
   return (
-    <form onSubmit={handleQuery} className="w-[100%] flex justify-end">
+    <form onSubmit={handleQuery} className="">
+      {/* w-[100%] flex justify-end */}
       <input
         type="text"
         name="search"

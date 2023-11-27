@@ -1,12 +1,12 @@
 'use client'
 
 import { useAnimeSchedules } from "@/hooks/useAnimeSchedules";
-import AnimeCard from "./AnimeCard";
 import { useStateContext } from "@/contexts/ContextProvider";
 import NavigationSchedules from "./NavigationSchedules";
 import TitleSection from "./TitleSection";
 import LoadingSpinner from "./LoadingSpinner";
 import { motion as m } from 'framer-motion';
+import AnimeCardSchedules from "./AnimeCardSchedules";
 
 const Schedules: React.FC = () => {
   const { selectedDay } = useStateContext();
@@ -24,7 +24,7 @@ const Schedules: React.FC = () => {
       <TitleSection title="Schedule" />
       <NavigationSchedules />
       {!isFetching
-        ? animesSchedule?.map((anime) => <AnimeCard key={anime.mal_id} anime={anime} />)
+        ? animesSchedule?.map((anime) => <AnimeCardSchedules key={anime.mal_id} anime={anime} />)
         : <LoadingSpinner />}
     </m.div>
   )

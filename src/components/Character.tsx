@@ -1,12 +1,17 @@
+'use client'
+
 import { AnimeCharacters } from "@/types/types"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 const Character: React.FC<{ character: AnimeCharacters }> = ({ character }) => {
+  const router = useRouter();
   return (
-    <Link
-      key={character.character.mal_id} href={`/anime/characters/idcuy`}
-      className="flex gap-2"
+    <div
+      key={character.character.mal_id}
+      className="flex gap-2 hover:bg-dark hover:cursor-pointer w-[280px]"
+      onClick={() => router.push(`/anime/characters/info/${character.character.mal_id}`)}
     >
       <Image
         src={character.character.images.webp.image_url}
@@ -19,7 +24,7 @@ const Character: React.FC<{ character: AnimeCharacters }> = ({ character }) => {
         <p>{character.character.name}</p>
         <p>{character.role}</p>
       </div>
-    </Link>
+    </div>
   )
 }
 
