@@ -1,9 +1,10 @@
 import { getCharacterDetail } from '@/lib/apiCall';
+import { AnimeCharacters } from '@/types/types';
 import { useEffect, useState } from 'react';
 
 export function useAnimeCharacter(id: number) {
   const [isFetching, setIsFetching] = useState<boolean>(false);
-  const [animeCharacter, setAnimeCharacter] = useState([]);
+  const [animeCharacter, setAnimeCharacter] = useState<AnimeCharacters | any>({});
 
   useEffect(() => {
     (async function () {

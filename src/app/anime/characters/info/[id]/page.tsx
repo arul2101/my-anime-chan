@@ -13,6 +13,8 @@ const Page = () => {
 
   const { animeCharacter, isFetching } = useAnimeCharacter(id);
 
+  console.log(animeCharacter);
+
 
   return (
     <>
