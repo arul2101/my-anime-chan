@@ -1,7 +1,5 @@
 'use client'
 
-import TitleSection from "./TitleSection";
-
 const data = ['ALL', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 const AlphabetFilter: React.FC<{ alpha: string; setAlpha: React.Dispatch<React.SetStateAction<string>> }> = ({ alpha, setAlpha }) => {

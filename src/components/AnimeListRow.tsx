@@ -1,10 +1,8 @@
 'use client'
 
-import Image from "next/image"
 import LoadingSpinner from "./LoadingSpinner"
 import TitleSection from "./TitleSection"
 import { AnimeListRow, Pagination } from "@/types/types"
-import { useRouter } from "next/navigation"
 import Button from "./Button"
 import AnimeCardRow from "./AnimeCardRow"
 

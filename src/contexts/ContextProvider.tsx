@@ -1,7 +1,5 @@
 'use client'
 
-import { useAnimeSchedules } from "@/hooks/useAnimeSchedules";
-import { AnimesSchedule } from "@/types/types";
 import { createContext, useState, useContext } from "react";
 
 export const days = [

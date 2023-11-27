@@ -14,8 +14,6 @@ export default function Page() {
   const [page, setPage] = useState(1);
   const { animesSearch, pagination, isFetching } = useAnimeSearch(queryParams, page);
 
-  // Fix bug ketika query params diketik lewat url dan isinya string kosong
-
   if (queryParams === null) {
     router.push("/");
   }

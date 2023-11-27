@@ -3,11 +3,9 @@
 import AnimeCharacters from "@/components/AnimeCharacters";
 import AnimeDetail from "@/components/AnimeDetail";
 import LoadingSpinner from "@/components/LoadingSpinner";
-import TopAnime from "@/components/TopAnime";
 import VoiceActors from "@/components/VoiceActors";
 import { useAnimeCharacters } from "@/hooks/useAnimeCharacters";
 import { useAnimeDetail } from "@/hooks/useAnimeDetail";
-import { useAnimeFullCharacters } from "@/hooks/useAnimeFullCharacters";
 import { usePathname } from "next/navigation"
 
 export default function Page() {

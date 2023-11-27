@@ -1,8 +1,5 @@
 import { useAnimeRecomendation } from "@/hooks/useAnimeRecomendation"
-import { axiosInstance } from "@/lib/axios"
-import LoadingSpinner from "./LoadingSpinner";
 import AnimeListCol from "./AnimeListCol";
-import { randomAnime } from "@/utils/helper";
 
 
 

@@ -3,12 +3,8 @@
 import type { AnimesSchedule } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 const AnimeCardSchedules: React.FC<{ anime: AnimesSchedule }> = ({ anime }) => {
-  // const router = useRouter();
-
-
   return (
     <Link
       href={`/anime/${anime.mal_id}`}
