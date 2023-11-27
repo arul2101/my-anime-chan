@@ -1,9 +1,10 @@
 import { getAllAnime } from "@/lib/apiCall";
+import { AnimeListRow } from "@/types/types";
 import { useEffect, useState } from "react";
 
 export function useAnimes(page: number, letter: string) {
   const [isFetching, setIsFetching] = useState<boolean>(false);
-  const [animes, setAnimes] = useState({});
+  const [animes, setAnimes] = useState<AnimeListRow[] | any>({});
 
   useEffect(() => {
     (async function () {

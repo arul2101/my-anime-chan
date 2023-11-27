@@ -16,7 +16,7 @@ export function useAnimeRecomendation() {
       setIsFetching(true);
       try {
         let anime = await getAnimeRecomendation();
-        anime = anime.data.flatMap(anime => anime.entry); // ambil data nested
+        anime = anime.data.flatMap((anime: any) => anime.entry); // ambil data nested
         anime = randomAnime(anime, 12); // random anime
         setAnimes(anime.data);
       } catch (error: Error | any) {
