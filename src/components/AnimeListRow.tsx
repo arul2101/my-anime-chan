@@ -15,14 +15,17 @@ type AnimeListRowProps = {
   pagination: Pagination;
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
+  children?: React.ReactNode;
 }
 
 
-const AnimeListRow: React.FC<AnimeListRowProps> = ({ animes, isFetching, title, pagination, page, setPage }) => {
+const AnimeListRow: React.FC<AnimeListRowProps> = ({ animes, isFetching, title, pagination, page, setPage, children }) => {
   return (
     <div
       className="lg:w-[70%] w-[100%] mb-4 bg-section text-white py-4 px-4 rounded-md h-[100%] text-center"
     >
+      {children}
+
       <div className="">
         <TitleSection title={title} />
         {isFetching

@@ -9,13 +9,15 @@ const InputSearch: React.FC = () => {
 
   const handleQuery = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
+    if (query.trim() === "") {
+      return;
+    }
     router.push(`/search?title=${query}`);
     setQuery("");
   }
 
   return (
     <form onSubmit={handleQuery} className="">
-      {/* w-[100%] flex justify-end */}
       <input
         type="text"
         name="search"

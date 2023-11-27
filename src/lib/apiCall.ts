@@ -45,8 +45,8 @@ async function getCharacterDetail(id: number) {
   return data;
 }
 
-async function getAllAnime(page: number) {
-  const { data } = await axiosInstance.get(`/anime?letter=z&page=${page}`)
+async function getAllAnime(page: number, letter: string) {
+  const { data } = await axiosInstance.get(`/anime?letter=${letter}&page=${page}`)
   return data;
 }
 

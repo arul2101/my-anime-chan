@@ -11,6 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'MyAnimeChan',
   description: 'MyAnimeChan by Anwar Production',
+  icons: '/logo.png'
 }
 
 export default function RootLayout({

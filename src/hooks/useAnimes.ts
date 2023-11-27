@@ -1,7 +1,7 @@
 import { getAllAnime } from "@/lib/apiCall";
 import { useEffect, useState } from "react";
 
-export function useAnimes(page: number) {
+export function useAnimes(page: number, letter: string) {
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [animes, setAnimes] = useState({});
 
@@ -9,14 +9,14 @@ export function useAnimes(page: number) {
     (async function () {
       setIsFetching(true);
       try {
-        const animes = await getAllAnime(page);
+        const animes = await getAllAnime(page, letter);
         setAnimes(animes);
       } catch (error: Error | any) {
         throw new Error(error.message);
       }
       setIsFetching(false);
     })();
-  }, [page]);
+  }, [page, letter]);
 
 
 
